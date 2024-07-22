@@ -1,0 +1,75 @@
+.custom_product_detail {
+    padding: 0 40px;
+    .left_section {
+        width: 50%;
+    }
+
+    .right_section {
+        width: 50%;
+        h2 {
+            font-size: 22px;
+            font-family: 'Satoshi-Bold';
+            font-weight: normal;
+            text-transform: capitalize;
+        }
+
+        p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 12px;
+            line-height: 25px;
+            width: 80%;
+            font-family: "Satoshi-Regular";
+        }
+
+        .price_sec {
+            .price {
+                font-size: 15px;
+                color: #000;
+                font-family: "Satoshi-Bold";
+            }
+        }
+
+        .button_section {
+            display: flex;
+            flex-wrap: wrap;
+
+            .left_section {
+                width: 50%;
+                button {
+                    background: #1D2B95;
+                    color: #fff;
+                    width: 214px;
+                    border-radius: 10px;
+                    height: 50px;
+                    border-color: #1D2B95;
+                    padding: 0;
+                }
+            }
+
+            .right_section {
+                height: 50px;
+                border-radius: 10px;
+                overflow: hidden;
+                width: 50%;
+
+                .qty {
+                    display: flex;
+                    justify-content: space-between;
+
+                    button {
+                        background: #1D2B95;
+                        height: 50px;
+                        color: #fff;
+                        width: 40px;
+                    }
+
+                    input {
+                        background: #1D2B95;
+                        height: 50px;
+                        width: calc(100% - 80px);
+                    }
+                }
+            }
+        }
+    }
+}
