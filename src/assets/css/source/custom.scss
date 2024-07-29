@@ -266,6 +266,7 @@
 }
 
 #portal-root {
+
     /* PortalComponent.css */
     .portal-overlay {
         position: fixed;
@@ -336,7 +337,7 @@
 
             .login_popUp {
 
-                #loginfrom {
+                #loginform {
                     padding: 0 20px 20px;
 
                     .sign_header {
@@ -400,6 +401,22 @@
                         }
                     }
 
+                    .otp_section {
+                        .form-group {
+                            margin: 20px 0;
+                            display: flex;
+                            grid-gap: 10px;
+
+                            input {
+                                width: 46px;
+                                height: 54px;
+                                border: 1px solid #d4d4d4 !important;
+                                border-radius: 14px !important;
+                                text-align: center;
+                            }
+                        }
+                    }
+
                     .btn-primary {
                         background-color: #fff100 !important;
                         display: flex;
@@ -413,6 +430,85 @@
                         width: 100%;
                         border-radius: 14px;
                         height: 45px;
+                    }
+
+                    .otp_inputs,
+                    .otp_verify {
+                        margin-top: 30px;
+
+                        p {
+                            font-size: 12px;
+                            font-family: "Satoshi-Medium";
+                            margin-bottom: 10px;
+                        }
+
+                        .inner_input {
+                            display: flex;
+                            flex-wrap: wrap;
+                            grid-gap: 15px;
+
+                            input {
+                                width: 46px;
+                                height: 54px;
+                                border: 1px solid #d4d4d4 !important;
+                                border-radius: 14px !important;
+                                text-align: center;
+                            }
+                        }
+
+                    }
+
+                    #registerfrom {
+                        margin: 10px 0;
+                        .form-group {
+                            label{
+
+                                padding: 0!important;
+                                color: #999;
+                                background-color: #fff;
+                                z-index: 10;
+                                transition: transform 150ms ease-out, font-size 150ms ease-out;
+                                padding: 0 15px;
+                                font-size: 12px;
+    
+                            }
+                            input {
+                                border-radius: 0 !important;
+                                border: 0 !important;
+                                border-bottom: 1px solid #999999 !important;
+                                font-family: "Satoshi-Medium";
+                                font-size: 12px;
+                                color: #000;
+                                height: 30px;
+                                position: relative;
+                                width: 100%;
+                                outline: 0;
+                                box-shadow: 0 1px 0 0 #e5e5e5;
+                                transition: box-shadow 150ms ease-out;
+                                z-index: 9999;
+                                margin-bottom: 12px;
+                            }
+                        }
+                    }
+
+                    #otpresentbtn {
+                        background-color: #fff100 !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        grid-gap: 10px;
+                        border: 1px solid #fff100 !important;
+                        color: #3a4599;
+                        font-family: "Satoshi-Bold";
+                        font-size: 12px;
+                        width: 100%;
+                        border-radius: 14px;
+                        padding: 5px 0;
+                        margin-top: 10px;
+
+                        img {
+                            width: 33px;
+                        }
                     }
 
                     .footer_line {
@@ -481,16 +577,17 @@
 
 // pincode
 
-.pincode_sec{
-    form{
+.pincode_sec {
+    form {
         padding: 30px 20px 15px 20px;
 
-        label{
+        label {
             font-size: 14px;
             font-family: "Satoshi-Bold";
             border: 0;
         }
-        input{
+
+        input {
             font-size: 12px;
             background-repeat: no-repeat;
             background-size: 15px;
@@ -521,7 +618,8 @@
                 -webkit-text-fill-color: #000 !important;
             }
         }
-        button{
+
+        button {
             width: 100%;
             background: #fff100;
             border: 0;
@@ -532,5 +630,3 @@
         }
     }
 }
-
-

@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     background: #fffee6;
-    z-index: 9;
+    z-index: 999;
 
     .main {
         .left_section {
@@ -173,6 +173,22 @@
             }
 
             .miniCart {
+                position: relative;
+                .Qtycounter{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: -11px;
+                    display: inline-flex;
+                    background: #1d2b95;
+                    line-height: normal;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    right: -10px;
+                }
                 .cart_icon {
                     background: url("../../images/Img/sprite_icons.png") -308px -15px;
                     width: 22px;

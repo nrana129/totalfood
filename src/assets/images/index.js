@@ -32,6 +32,7 @@ const TryMust2 = require('./TryMust/tryMust1.jpeg');
 const NoPageImg = require('./NoPage/404.jpg');
 const Chicken1 = require('./ProductList/Chicken_3_1.png');
 const LocationBanner = require('./Pincode/location_banner.png');
+const msg_icon = require('./Img/msg_icon.png');
 
 
 
@@ -68,5 +69,6 @@ export {
     NoPageImg,
     Chicken1,
     login_banner,
-    LocationBanner
+    LocationBanner,
+    msg_icon
 };

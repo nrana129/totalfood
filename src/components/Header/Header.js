@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Logo, Search } from "../../assets/images/index";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import PortalPop from "../PortalPop/PortalPop";
 import PinCode from "../PinCode/PinCode";
 import Login from "../Login/Login";
@@ -12,6 +13,8 @@ const Header = () => {
   const [locationPortal, setLocationPortal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const [showcart, setCart] = useState(false);
+  const Qtycounter = useSelector((state) => state.Qtycounter);
+  const [QtycounterShow, setQtycounterShow] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -54,6 +57,15 @@ const Header = () => {
   useEffect(() => {
     setShowCategories(false);
   }, [location.pathname]);
+
+  // Update QtycounterShow based on Qtycounter value
+  useEffect(() => {
+    if(Qtycounter > 0){
+      setQtycounterShow(true);
+    } else {
+      setQtycounterShow(false);
+    }
+  }, [Qtycounter]);
 
   // Custom Link component to handle popup close and navigation
   const CustomLink = ({ to, children, ...props }) => (
@@ -141,6 +153,9 @@ const Header = () => {
               )}
             </div>
             <div className="miniCart">
+              {QtycounterShow && (
+                <span className="Qtycounter">{Qtycounter}</span>
+              )}
               <span onClick={handleToggleCart} className="cart_icon"></span>
               <div
                 className={`miniCartContent ${showcart ? "active" : ""}`}

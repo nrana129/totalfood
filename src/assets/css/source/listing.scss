@@ -189,6 +189,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+
                         .pricebox {
                             .price {
                                 font-weight: 700;
@@ -197,41 +198,53 @@
                             }
                         }
 
-                        .main_select{
-                            .qty_section{
-                                position: relative;
-                                display: inline-block;
-                                input{
-                                    height: 33px !important;
-                                    width: 65px !important;
-                                    border-radius: 10px !important;
-                                    text-align: center;
-                                    padding: 0 !important;
-                                    background: #e1e5ff !important;
-                                    border: 0;
+                        .main_select {
+                            .add_button {
+                                .add_cart {
+                                    background: #e1e5ff;
                                     color: #1d2b95;
-                                    font-family: "Satoshi-Bold" !important;
-                                    cursor: pointer;
-                                    pointer-events: none;
-                                    font-size: 12px;
-                                  }
-                                  button{
-                                    background: transparent !important;
-                                    border: 0 !important;
-                                    position: absolute;
-                                    padding: 0 !important;
-                                    height: 20px !important;
-                                    width: 18px;
-                                    top: 6px;
-                                    color: #1d2b95 !important;
+                                    width: max-content;
+                                    border-radius: 10px !important;
                                     font-size: 14px !important;
-                                    &.minus_qty{
+                                    border: 0;
+                                    height: 33px;
+                                    font-family: "Satoshi-Bold";
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 0 15px;
+                                }
+                            }
+
+                            .qty_section {
+                                position: relative;
+                                display: inline-flex;
+                                align-items: center;
+                                border: 1px solid #1d2b95;
+                                background: #f2f3ff;
+                                border-radius: 8px;
+                                box-sizing: border-box;
+                                width: 86px;
+                                margin-top: 10px;
+
+                                span {
+                                    padding: 6px 10px;
+                                    width: 100%;
+                                    background: #f2f3ff;
+                                    font-size: 14px;
+                                }
+
+                                button {
+                                    padding: 6px 10px;
+
+                                    &.minus_qty {
                                         left: 0;
                                     }
-                                    &.plus_qty{
+
+                                    &.plus_qty {
                                         right: 0;
                                     }
-                                  }
+                                }
                             }
                         }
                     }
