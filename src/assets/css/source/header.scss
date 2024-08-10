@@ -10,11 +10,14 @@
 
     .main {
         .left_section {
+            align-items: center;
             .location {
                 color: #000;
                 font-size: 13px;
                 font-family: "Satoshi-Bold";
                 cursor: pointer;
+                line-height: normal;
+                padding-right: 20px;
             }
         }
 

@@ -43,7 +43,13 @@ const BannerCarousel = () => {
 
   
   if (loading) {
-    return <div>Loading...</div>; // Show loading message while fetching data
+    return(
+      <div className="banner_loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    ) // Show loading message while fetching data
   }
 
   if (error || !Array.isArray(bannerData) || bannerData.length === 0) {

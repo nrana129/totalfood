@@ -55,6 +55,67 @@
   img {
     width: 100%;
     height: max-content;
+    border-radius: 30px;
+  }
+}
+
+.banner_loader{
+  display: flex;
+  grid-gap: 20px;
+  justify-content: center;
+  div{
+    flex-shrink: 0;
+    height: 177px;
+    width: 630px;
+    border-radius: 30px;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+    background-size: 1200px 100%;
+
+    @keyframes shimmer{
+      0%{
+        background-position: -1200px 0;
+      }
+      100%{
+        background-position: 1200px 0;
+      }
+    }
+  }
+}
+
+
+.categories_loader{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 50px;
+  justify-content: center;
+  margin-top: 120px;
+  padding: 0 30px;
+  div{
+    width: 177px;
+    height: 177px;
+    margin: 0 auto;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+    background-size: 1200px 100%;
+    @keyframes shimmer{
+      0%{
+        background-position: -1200px 0;
+      }
+      100%{
+        background-position: 1200px 0;
+      }
+    }
   }
 }
 

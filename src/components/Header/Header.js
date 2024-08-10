@@ -13,11 +13,20 @@ const Header = () => {
   const [locationPortal, setLocationPortal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const [showcart, setCart] = useState(false);
+  const [selectedAddress, setSelectedAddress] = useState("Detecting Location");
   const Qtycounter = useSelector((state) => state.Qtycounter);
   const [QtycounterShow, setQtycounterShow] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve address from localStorage on component mount
+    const savedAddress = localStorage.getItem("selectedAddress");
+    if (savedAddress) {
+      setSelectedAddress(savedAddress);
+    }
+  }, []);
 
   const handleClose = () => {
     setLoginPortal(false);
@@ -36,12 +45,10 @@ const Header = () => {
   };
 
   const handleToggleCart = () => {
-    console.log("click");
     setCart(!showcart);
   };
 
   const handleToggleCartClose = () => {
-    console.log("click");
     setCart(false);
   };
 
@@ -81,6 +88,12 @@ const Header = () => {
     </Link>
   );
 
+  // Function to handle address selection
+  const handleAddressSelect = (address) => {
+    setSelectedAddress(address);
+    setLocationPortal(false); // Close location portal after selecting address
+  };
+
   return (
     <div className="header">
       <div className="container">
@@ -93,11 +106,11 @@ const Header = () => {
             </div>
             <div className="location">
               <span onClick={() => setLocationPortal(!locationPortal)}>
-                Detecting Location
+                {selectedAddress}
               </span>
               {locationPortal && (
                 <PortalPop onClose={LocationClose}>
-                  <PinCode />
+                  <PinCode onAddressSelect={handleAddressSelect} />
                 </PortalPop>
               )}
             </div>
@@ -178,8 +191,8 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <Outlet />
       </div>
+      <Outlet />
     </div>
   );
 };

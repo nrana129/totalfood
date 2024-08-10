@@ -30,10 +30,8 @@ const ShopByCategories = () => {
         const data = await response.json();
         CategoriesSData(data.categories);
         setLoading(false);
-
-
       } catch (error) {
-        setError(error)
+        setError(error);
         console.log(error);
         setLoading(false);
       }
@@ -42,11 +40,17 @@ const ShopByCategories = () => {
     fetchData();
   }, []);
 
+  const divs = Array.from({ length: 12 });
 
-  if(loading){
-    return <div>loading...</div>
+  if (loading) {
+    return (
+      <div className="categories_loader">
+        {divs.map((_, index) => (
+          <div key={index}></div>
+        ))}
+      </div>
+    );
   }
-
 
   if (error || !Array.isArray(categoriesData) || categoriesData.length === 0) {
     return <div>Error: No data available</div>; // Handle case where no data is available or error occurred
@@ -54,8 +58,9 @@ const ShopByCategories = () => {
 
   // console.log(categoriesData);
 
-  const filteredCategories = categoriesData.filter(category => category.image);
-
+  const filteredCategories = categoriesData.filter(
+    (category) => category.image
+  );
 
   console.log(filteredCategories);
 
